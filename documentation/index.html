@@ -13,7 +13,8 @@
 
 <p>
 	SuperScript will retrieve the contents of this block and create an instance of 
-	<abbr title="SuperScript.Templates.Declarables.TemplateDeclaration"><code>TemplateDeclaration</code></abbr> containing these contents.
+	<a href="http://supertext.github.io/SuperScript.Templates/#!/declarations.template-declaration" target="_blank"><abbr title="SuperScript.Templates.Declarables.TemplateDeclaration"><code>TemplateDeclaration</code></abbr></a> 
+	containing these contents.
 </p>
 
 <p>
@@ -24,8 +25,10 @@
 <pre class="brush: c#">
 	public static class HtmlExtensions
 	{
+		static IDisposable TemplateContainer(this HtmlHelper helper)
 		static IDisposable TemplateContainer(this HtmlHelper helper, string name)
 		static IDisposable TemplateContainer(this HtmlHelper helper, string name, string emitterKey)
+		static IDisposable TemplateContainer(this HtmlHelper helper, int insertAt)
 		static IDisposable TemplateContainer(this HtmlHelper helper, string name, int insertAt)
 		static IDisposable TemplateContainer(this HtmlHelper helper, string name, string emitterKey, int insertAt)
 	}
@@ -126,7 +129,7 @@
 </pre>
 
 <p>
-  An inner <code>&lt;script&gt;</code> tag is optional when only one template is being declared, but in the case where multipl
+  An inner <code>&lt;script&gt;</code> tag is optional when only one template is being declared, but in the case where multiple
   templates are being declared then these templates must be segregated within <code>&lt;script&gt;</code> tags. The client-side
   name for each template is therefore declared on each <code>&lt;script&gt;</code> tag.
 </p>
@@ -141,7 +144,7 @@
   // or
   
   &lt;script type="text/html" name="testTemplate"&gt;
-<pre>
+</pre>
 
 <p>
 	The above example will move the HTML template into a 
