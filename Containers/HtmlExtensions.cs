@@ -121,24 +121,6 @@ namespace SuperScript.Templates.Mvc.Containers
         /// <param name="helper">
         /// The helper from which we use the context.
         /// </param>
-        /// <returns>
-        /// This extension method will return an empty <see cref="string"/> at runtime.
-        /// </returns>
-        public static IDisposable TemplateContainer(this HtmlHelper helper)
-        {
-            return new InternalTemplateContainer(helper,
-                                                 Settings.Instance.DefaultEmitter.Key,
-                                                 null,  // template name
-                                                 null); // insertAt
-        }
-
-
-        /// <summary>
-        /// Start a block of movable HTML template content.
-        /// </summary>
-        /// <param name="helper">
-        /// The helper from which we use the context.
-        /// </param>
         /// <param name="name">The client-side name assigned to this template.</param>
         /// <returns>
         /// This extension method will return an empty <see cref="string"/> at runtime.
@@ -172,25 +154,6 @@ namespace SuperScript.Templates.Mvc.Containers
                                                  emitterKey,
                                                  name,  // template name
                                                  null); // insertAt
-        }
-
-
-        /// <summary>
-        /// Start a block of movable HTML template content.
-        /// </summary>
-        /// <param name="helper">
-        /// The helper from which we use the context.
-        /// </param>
-        /// <param name="insertAt">Indicates the index in the collection at which the contents are to be inserted.</param>
-        /// <returns>
-        /// This extension method will return an empty <see cref="string"/> at runtime.
-        /// </returns>
-        public static IDisposable TemplateContainer(this HtmlHelper helper, int insertAt)
-        {
-            return new InternalTemplateContainer(helper,
-                                                 Settings.Instance.DefaultEmitter.Key,
-                                                 null,      // template name
-                                                 insertAt);
         }
 
 
